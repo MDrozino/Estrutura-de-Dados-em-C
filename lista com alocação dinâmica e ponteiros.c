@@ -41,7 +41,7 @@ void entradaDados(pessoa *p1, aluno *alu){
 	printf("Informe o curso: ");
 	scanf(" %[^\n]", alu->curso);
 	
-	printf("\nMemÛria alocada com sucesso!\n");
+	printf("\nMem√≥ria alocada com sucesso!\n");
 	system("pause");
 	
 }
@@ -50,7 +50,7 @@ void inserir_inicio(pessoa p, aluno al, No **inicio){
 	No *novo = (No*)malloc(sizeof(No));
 	
 	if(novo == NULL){
-		printf("MemÛria insuficiente");
+		printf("Mem√≥ria insuficiente");
 		exit(0);
 	}
 	else{
@@ -73,17 +73,17 @@ void inserir_meio(pessoa p, aluno al, No **inicio){
 	int contLocal = 1;
 	
 	system("cls");
-	printf("Em qual posiÁ„o vocÍ quer inserir o elemento:");
+	printf("Em qual posi√ß√£o voc√™ quer inserir o elemento:");
 	scanf("%d", &insercao);
 	
 	while(insercao>cont || insercao<=1 ){
-		printf("PosiÁ„o inv·lida - informe uma posiÁ„o entre 2 e %d:", cont);
+		printf("Posi√ß√£o inv√°lida - informe uma posi√ß√£o entre 2 e %d:", cont);
 		scanf("%d", &insercao);
 	}
 	
 	
 	if(novo == NULL){
-		printf("AlocaÁ„o de memÛria falhou...\n");
+		printf("Aloca√ß√£o de mem√≥ria falhou...\n");
 		exit(0);
 	}
 	
@@ -105,7 +105,7 @@ void inserir_meio(pessoa p, aluno al, No **inicio){
 	
 	cont+=1;
 	
-	printf("MemÛria inserida!\n\n");
+	printf("Mem√≥ria inserida!\n\n");
 	system("pause");
 	
 }
@@ -114,7 +114,7 @@ void inserir_fim(pessoa p, aluno al, No **inicio){
 	No *aux, *novo = (No*)malloc(sizeof(No));
 	
 	if(novo == NULL){
-		printf("AlocaÁ„o de memÛria falhou...\n");
+		printf("Aloca√ß√£o de mem√≥ria falhou...\n");
 		exit(0);
 	}
 	
@@ -145,7 +145,7 @@ void imprimir(No *no){
 	int x = 1;
 	
 	if(no==NULL){
-		printf("A lista est· vazia...:)\n");
+		printf("A lista est√° vazia...:)\n");
 		system("pause");
 	}else{
 	
@@ -156,7 +156,7 @@ void imprimir(No *no){
 	while(no!=NULL){
         printf("Nome:  %s\n", no->p.nome);
         printf("CPF:   %s\n", no->p.cpf);
-        printf("RG:    %s              %d - elemento∫\n", no->p.rg, x);
+        printf("RG:    %s              %d - elemento¬∫\n", no->p.rg, x);
         printf("RA:    %s\n", no->al.ra);
         printf("Curso: %s\n", no->al.curso);
         
@@ -179,11 +179,11 @@ void remover(No **inicio){
 	No *temp = NULL;
 
 	
-	printf("Informe a posiÁ„o que deseja remover:");
+	printf("Informe a posi√ß√£o que deseja remover:");
 	scanf("%d", &remocao);
 	
 	while(remocao<1 || remocao>cont){
-		printf("PosiÁ„o inv·lida - informe uma posiÁ„o de 1 a %d: ", cont);
+		printf("Posi√ß√£o inv√°lida - informe uma posi√ß√£o de 1 a %d: ", cont);
 		scanf("%d", &remocao);
 	}
 	
@@ -210,12 +210,12 @@ void remover(No **inicio){
 		if (temp != NULL) {
             temp->proximo = NULL;
             free(aux);
-        } else { 				// se sÛ tiver um elemento
+        } else { 				// se s√≥ tiver um elemento
             free(*inicio);
             *inicio = NULL;
         }
         cont-=1;
-		printf("%d∫ elemento removido!\n\n", cont+1);
+		printf("%d¬∫ elemento removido!\n\n", cont+1);
 		system("pause");
 	}else{
 		
@@ -232,7 +232,7 @@ void remover(No **inicio){
 		free(temp);
 		
 		cont-=1;
-		printf("%d∫ elemento removido!\n\n", contLocal+1);
+		printf("%d¬∫ elemento removido!\n\n", contLocal+1);
 		system("pause");
 		
 	}
@@ -249,13 +249,13 @@ void inserir_ordenado(pessoa p, aluno al, No **inicio){
 		strcpy(novo->al.ra, al.ra);
 		strcpy(novo->al.curso, al.curso);
 		
-		//a lista est· vazia?
+		//a lista est√° vazia?
 		
 		if(*inicio == NULL){
 			novo->proximo = NULL;
 			*inicio = novo;
 			cont++;
-		}	//È o menor?
+		}	//√© o menor?
 		else if(strcmp(novo->p.nome, (*inicio)->p.nome) < 0){
 			novo->proximo = *inicio;
 			*inicio = novo;
@@ -274,7 +274,7 @@ void inserir_ordenado(pessoa p, aluno al, No **inicio){
 		}
 	}
 	else{
-		printf("N„o foi possÌvel alocar...\n\n");
+		printf("N√£o foi poss√≠vel alocar...\n\n");
 		system("pause");
 	}
 }
@@ -327,7 +327,7 @@ main(){
 					break;
 				
 				}else{
-					printf("A lista est· vazia.:)\n\n");
+					printf("A lista est√° vazia.:)\n\n");
 					system("pause");
 					break;
 				}
